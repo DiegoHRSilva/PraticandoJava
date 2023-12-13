@@ -27,11 +27,11 @@ public class Personagem {
       inteligencia[i] = random.nextInt(6) + 1;
       sabedoria[i] = random.nextInt(6) + 1;
       carisma[i] = random.nextInt(6) + 1;
-
     }
+    ordenarArrays();
   }
 
-  public void ordenarArrays() {
+  private void ordenarArrays() {
     Arrays.sort(forca);
     Arrays.sort(destreza);
     Arrays.sort(constituicao);
