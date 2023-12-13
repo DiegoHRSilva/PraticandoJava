@@ -42,8 +42,6 @@ public class Main {
 
     System.out.println("Nome:" + nome);
 
-    personagem.ordenarArrays();
-
     personagem.imprimirValores();
 
   }
