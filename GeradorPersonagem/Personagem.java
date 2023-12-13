@@ -21,12 +21,13 @@ public class Personagem {
 
   public Personagem() {
     for (int i = 0; i < 4; i++) {
-      forca[i] = random.nextInt(4) + 1;
-      destreza[i] = random.nextInt(4) + 1;
-      constituicao[i] = random.nextInt(4) + 1;
-      inteligencia[i] = random.nextInt(4) + 1;
-      sabedoria[i] = random.nextInt(4) + 1;
-      carisma[i] = random.nextInt(4) + 1;
+      forca[i] = random.nextInt(6) + 1;
+      destreza[i] = random.nextInt(6) + 1;
+      constituicao[i] = random.nextInt(6) + 1;
+      inteligencia[i] = random.nextInt(6) + 1;
+      sabedoria[i] = random.nextInt(6) + 1;
+      carisma[i] = random.nextInt(6) + 1;
+
     }
   }
 
@@ -50,27 +51,5 @@ public class Personagem {
     return soma;
   }
 
-  public void geraTotal() {
-    somaForca = calcularAtributo(forca);
-    somaDestreza = calcularAtributo(destreza);
-    somaConstituicao = calcularAtributo(constituicao);
-    somaInteligencia = calcularAtributo(inteligencia);
-    somaSabedoria = calcularAtributo(sabedoria);
-    somaCarisma = calcularAtributo(carisma);
-  }
-
-  public void imprimirValores() {
-    System.out
-        .println("Força: " + Arrays.toString(forca) + " -> " + calcularAtributo(forca));
-    System.out
-        .println("Destreza: " + Arrays.toString(destreza) + " -> " + calcularAtributo(destreza));
-    System.out.println(
-        "Constituição: " + Arrays.toString(constituicao) + " -> " + calcularAtributo(constituicao));
-    System.out.println(
-        "Inteligência: " + Arrays.toString(inteligencia) + " -> " + calcularAtributo(inteligencia));
-    System.out
-        .println("Sabedoria: " + Arrays.toString(sabedoria) + " -> " + calcularAtributo(sabedoria));
-    System.out
-        .println("Carisma: " + Arrays.toString(carisma) + " -> " + calcularAtributo(carisma));
-  }
+  public void imprimirValores() {}
 }
