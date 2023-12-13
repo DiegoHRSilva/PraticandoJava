@@ -46,8 +46,6 @@ public class Main {
 
     personagem.imprimirValores();
 
-    personagem.geraTotal();
-
   }
 
 }
