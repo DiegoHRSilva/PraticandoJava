@@ -3,15 +3,9 @@ package ded2;
 public class Main {
 
   private static void criaPersonagem(String nome, Personagem personagem) {
-
     System.out.println("Nome:" + nome);
-
     personagem.ordenarArrays();
-
     personagem.imprimirValores();
-
-    personagem.geraTotal();
-
   }
 
   public static void main(String[] args) {
@@ -50,5 +44,4 @@ public class Main {
     criaPersonagem(nome6, personagem6);
 
   }
-
 }
