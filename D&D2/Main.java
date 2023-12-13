@@ -2,10 +2,12 @@ package ded2;
 
 public class Main {
 
-  private static void criaPersonagem(String nome, Personagem personagem) {
-    System.out.println("Nome:" + nome);
-    personagem.ordenarArrays();
+  private static void criaPersonagem(Personagem personagem) {
+
+    personagem.geraPersonagem();
+
     personagem.imprimirValores();
+
   }
 
   public static void main(String[] args) {
@@ -17,31 +19,25 @@ public class Main {
     String nome5 = "aleatorio1";
     String nome6 = "Aleatorio2";
 
-    Personagem personagem1;
-    Personagem personagem2;
-    Personagem personagem3;
-    Personagem personagem4;
-    Personagem personagem5;
-    Personagem personagem6;
+    Personagem personagem1 = new Guerreiro(nome1);
 
-    personagem1 = new Guerreiro();
+    Personagem personagem2 = new Ladino(nome2);
 
-    personagem2 = new Ladino();
+    Personagem personagem3 = new Barbaro(nome3);
 
-    personagem3 = new Barbaro();
+    Personagem personagem4 = new Mago(nome4);
 
-    personagem4 = new Mago();
+    Personagem personagem5 = new Monge(nome5);
 
-    personagem5 = new Monge();
+    Personagem personagem6 = new Bardo(nome6);
 
-    personagem6 = new Bardo();
-
-    criaPersonagem(nome1, personagem1);
-    criaPersonagem(nome2, personagem2);
-    criaPersonagem(nome3, personagem3);
-    criaPersonagem(nome4, personagem4);
-    criaPersonagem(nome5, personagem5);
-    criaPersonagem(nome6, personagem6);
+    criaPersonagem(personagem1);
+    criaPersonagem(personagem2);
+    criaPersonagem(personagem3);
+    criaPersonagem(personagem4);
+    criaPersonagem(personagem5);
+    criaPersonagem(personagem6);
 
   }
+
 }
