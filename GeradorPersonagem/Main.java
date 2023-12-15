@@ -5,6 +5,14 @@ import java.util.Scanner;
 
 public class Main {
 
+  private static void criaPersonagem(Personagem personagem) {
+
+    personagem.geraPersonagem();
+
+    personagem.imprimirValores();
+
+  }
+
   public static void main(String[] args) {
 
     Scanner scanner = new Scanner(System.in);
@@ -17,32 +25,30 @@ public class Main {
 
     int numeroClasse = random.nextInt(6) + 1;
 
-    Personagem personagem = null;
-
-    switch (numeroClasse) {
-      case 1:
-        personagem = new Guerreiro();
-        break;
-      case 2:
-        personagem = new Ladino();
-        break;
-      case 3:
-        personagem = new Barbaro();
-        break;
-      case 4:
-        personagem = new Mago();
-        break;
-      case 5:
-        personagem = new Monge();
-        break;
-      case 6:
-        personagem = new Bardo();
-        break;
+    if (numeroClasse == 1) {
+      Personagem personagem = new Guerreiro(nome);
+      criaPersonagem(personagem);
     }
-
-    System.out.println("Nome:" + nome);
-
-    personagem.imprimirValores();
+    if (numeroClasse == 2) {
+      Personagem personagem = new Ladino(nome);
+      criaPersonagem(personagem);
+    }
+    if (numeroClasse == 3) {
+      Personagem personagem = new Barbaro(nome);
+      criaPersonagem(personagem);
+    }
+    if (numeroClasse == 4) {
+      Personagem personagem = new Mago(nome);
+      criaPersonagem(personagem);
+    }
+    if (numeroClasse == 5) {
+      Personagem personagem = new Monge(nome);
+      criaPersonagem(personagem);
+    }
+    if (numeroClasse == 6) {
+      Personagem personagem = new Bardo(nome);
+      criaPersonagem(personagem);
+    }
 
   }
 
