@@ -3,41 +3,83 @@ package ded;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Personagem {
-  int[] forca = new int[4];
-  int[] destreza = new int[4];
-  int[] constituicao = new int[4];
-  int[] inteligencia = new int[4];
-  int[] sabedoria = new int[4];
-  int[] carisma = new int[4];
-  int somaForca = 0;
-  int somaDestreza = 0;
-  int somaConstituicao = 0;
-  int somaInteligencia = 0;
-  int somaSabedoria = 0;
-  int somaCarisma = 0;
+public abstract class Personagem {
+  private String Nome;
+  private int[] forca = new int[4];
+  private int[] destreza = new int[4];
+  private int[] constituicao = new int[4];
+  private int[] inteligencia = new int[4];
+  private int[] sabedoria = new int[4];
+  private int[] carisma = new int[4];
 
-  Random random = new Random();
-
-  public Personagem() {
-    for (int i = 0; i < 4; i++) {
-      forca[i] = random.nextInt(6) + 1;
-      destreza[i] = random.nextInt(6) + 1;
-      constituicao[i] = random.nextInt(6) + 1;
-      inteligencia[i] = random.nextInt(6) + 1;
-      sabedoria[i] = random.nextInt(6) + 1;
-      carisma[i] = random.nextInt(6) + 1;
-    }
-    ordenarArrays();
+  public String getNome() {
+    return Nome;
   }
 
-  private void ordenarArrays() {
-    Arrays.sort(forca);
-    Arrays.sort(destreza);
-    Arrays.sort(constituicao);
-    Arrays.sort(inteligencia);
-    Arrays.sort(sabedoria);
-    Arrays.sort(carisma);
+  public void setNome(String nome) {
+    Nome = nome;
+  }
+
+  public Personagem(String nome) {
+    Nome = nome;
+  }
+
+  public int[] getForca() {
+    return forca;
+  }
+
+  public void setForca() {
+    this.forca = gerarAtributoAleatorio();
+  }
+
+  public int[] getDestreza() {
+    return destreza;
+  }
+
+  public void setDestreza() {
+    this.destreza = gerarAtributoAleatorio();
+  }
+
+  public int[] getConstituicao() {
+    return constituicao;
+  }
+
+  public void setConstituicao() {
+    this.constituicao = gerarAtributoAleatorio();
+  }
+
+  public int[] getInteligencia() {
+    return inteligencia;
+  }
+
+  public void setInteligencia() {
+    this.inteligencia = gerarAtributoAleatorio();
+  }
+
+  public int[] getSabedoria() {
+    return sabedoria;
+  }
+
+  public void setSabedoria() {
+    this.sabedoria = gerarAtributoAleatorio();
+  }
+
+  public int[] getCarisma() {
+    return carisma;
+  }
+
+  public void setCarisma() {
+    this.carisma = gerarAtributoAleatorio();
+  }
+
+  private int[] gerarAtributoAleatorio() {
+    int[] atributo = new int[4];
+    Random random = new Random();
+    for (int i = 0; i < atributo.length; i++) {
+      atributo[i] = random.nextInt(6) + 1;
+    }
+    Arrays.sort(atributo);
+    return atributo;
   }
 
   protected int calcularAtributo(int[] vetor) {
@@ -52,4 +94,6 @@ public class Personagem {
   }
 
   public void imprimirValores() {}
+
+  public void geraPersonagem() {}
 }
